@@ -1,0 +1,150 @@
+import java.util.*;
+import java.io.*;
+
+// "static void main" must be defined in a public class.
+// DSA
+// Data Structures and Algorithm
+// data structures :  way to store data
+// Algorithm : performing set of instructions to produce meaningfull output
+// 
+
+// WAP to find the first occurnce and last occurance in array
+// first occurance
+// Last occurance
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        //take lenth of array and elements and print it
+        int n = scan.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = scan.nextInt();
+            System.out.print(arr[i]+" ");
+        }
+        //now take input for num to cheak occurance
+        // int target = scan.nextInt();
+        // System.out.println("\nTarget "+target);
+        // // first occurrance
+        // boolean flag = false;
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(arr[i]==target)
+        //     {
+        //         System.out.print(i+" ");
+        //         flag = true;
+        //         break;
+        //     }
+        // }
+        // // last occurance
+        // for(int i=n-1;i>0;i--)
+        // {
+        //     if(arr[i]==target)
+        //     {
+        //         System.out.print(i+" ");
+        //         break;
+        //     }
+        // }
+        // // if target not present
+        // if(flag == false)
+        // {
+        //     System.out.print(-1);
+        // }
+        
+        
+// in one for loop
+// by count
+        // int first=-1;
+        // int last=-1;
+        // int count =0;
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(arr[i]==target)
+        //     {
+        //         count++;
+        //         if(count==1)
+        //         {
+        //             first =i;
+        //         }
+        //         last = i;
+        //     }
+        // }
+        // System.out.print(first+" "+last);
+        
+// without count @importent
+        // lowest time complaxity
+        
+        // int first = -1;
+        // int last = -1;
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(arr[i]==target)
+        //     {
+        //         if(first==-1)
+        //         {
+        //             first =i;
+        //         }
+        //         last =i;
+        //     }
+        // }
+        // System.out.print(first+" "+last);
+        
+// WAP to find the diffrence in b/w max and min in a array
+        
+//         int min = Integer.MAX_VALUE;
+//         int max = Integer.MIN_VALUE;
+//         for(int i=0;i<n;i++)
+//         {
+//             if(arr[i]<min)
+//             {
+//                 min = arr[i];
+//             }
+            
+//             if(arr[i]>max)
+//             {
+//                 max=arr[i];
+//             }
+//         }
+        
+//         System.out.println("\n"+(max-min));
+        
+// peak and mountain array
+        // in peak there should be one accend and one decend
+        
+        // peak  arr[i-1] < arr[i] > arr[i+1];
+        // vally arr[i-1] > arr[i] < arr[i+1];
+        
+        int peak =0;
+        int vally =0;
+        
+        for(int i=1;i<n-1;i++)
+        {
+            if(arr[i-1]<arr[i] && arr[i]>arr[i+1])
+            {
+                peak++;
+            }
+            
+            if(arr[i-1]>arr[i] && arr[i]<arr[i+1])
+            {
+                vally++;
+            }
+        }
+        
+        System.out.print("\n"+ peak +" "+ vally);
+        
+// if mountain array then peak ==1 and vally ==0;
+        
+        if(peak == 1 && vally == 0)
+        {
+            System.out.print("\nMountain Array");
+        }
+        else
+        {
+            System.out.print("\nNot a Mountain Array");            
+        }
+        
+    }
+}
