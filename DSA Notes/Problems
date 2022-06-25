@@ -1,0 +1,509 @@
+// "static void main" must be defined in a public class.
+public class Main {
+
+// Function to Reverse an Array;
+    // public static void reverse(int[] arr, int start, int end){
+    //     while(start<end)
+    //     {
+    //         int temp = arr[start];
+    //         arr[start] = arr[end];
+    //         arr[end] = temp;
+    //         start++;
+    //         end--;
+    //     }
+    // }
+    
+        // public static int maxOperations(int[] arr, int k) {
+        // Arrays.sort(arr);
+        // int start=0;
+        // int end=arr.length-1;
+        // int count=0;
+        // while(start<end)
+        // {
+        //     if(arr[start]+arr[end] == k)
+        //     {
+        //         count++;
+        //         start++;
+        //         end--;
+        //     }
+        //     else if(arr[start]+arr[end]<k) start++;
+        //     else end--;
+        // }
+        // return count;
+    // }
+    
+    
+    public static void main(String[] args) {
+        // Scanner scan = new Scanner(System.in);
+        //  int n= scan.nextInt();
+        // int[] arr = new int[n];
+        // for(int i=0;i<n;i++)
+        // {
+        //     arr[i]= scan.nextInt();
+        //     System.out.print(arr[i]+" ");
+        // }
+//  1 WAP to print if a reactangle is squire
+//         System.out.println("Enter the width and height of the ractangle");
+        
+//         Scanner scan = new Scanner(System.in);
+//         int width = scan.nextInt();
+//         int height = scan.nextInt();
+        
+//         if( width == height)
+//         {
+//             System.out.println("This is a squire");
+//         }
+        
+//         else
+//         {
+//             System.out.println("Not a Squire");
+//         }
+        
+        // 2 WAP to cheak greatest of three
+//         System.out.println("Enter three numbers");
+        
+//         Scanner scan = new Scanner(System.in);
+//         int num1 = scan.nextInt();
+//         int num2 = scan.nextInt();
+//         int num3 = scan.nextInt();
+        
+//         if( num1 > num2 && num1 > num3)
+//         {
+//             System.out.println(num1 + " is greatest ");
+//         }
+        
+//         else if (num2 > num1 && num2 > num3)
+//         {
+//             System.out.println(num2 + " is greatest");
+//         }
+//         else
+//         {
+//             System.out.println(num3 + " is greatest");
+//         }
+        
+        // 3 WAP to cheak if a alphabet is UPPERCASE or lowerCASE
+//           System.out.println("Enter any alphabet");
+        
+//         Scanner scan = new Scanner(System.in);
+//         char ch1 = scan.next().charAt(0);
+        
+//         if ( ch1 >= 'A' && ch1 <= 'Z')
+//         // if ( ch1 >= 60 && ch1 <= 95)
+//         {
+//             System.out.println(ch1 + " is UPPERCASE");
+//         }
+        
+//         else
+//         {
+//             System.out.println(ch1 + " is lowercase");
+//         }
+        
+        // 4 WAP to cheak  what time of day it is (mrng/noon/eve/night)
+        
+//         System.out.println("Enter any the hour of the day");
+//         Scanner scan = new Scanner(System.in);
+//         int  h1 = scan.nextInt();
+        
+//         if (h1<12)
+//         {
+//             System.out.println("Good mornig");
+//         }
+        
+//         else if (h1<=16 && h1>=12)
+//         {
+//             System.out.println("Good afternoon");
+//         }
+        
+//         else if (h1<=20 && h1>16)
+//         {
+//             System.out.println("Good evening");
+//         }
+//         else
+//         {
+//             System.out.println("Good night");
+//         }
+
+        
+//         Wap to add next no. in itself and print it
+       
+//         int n= scan.nextInt();
+//         int b = 0;
+//         // Scanner scn = new Scanner(System.in);
+//         for(int i=1; i<=n; i++)
+//         {
+            
+//             int a = scan.nextInt();
+//             b = b+a;
+//             System.out.println(b);    
+//         }
+//         System.out.println(b);
+        
+// WAP to print intersection of two arrays(common elements)
+    // 1st method brute force method
+        // System.out.print("\n");
+        // int m= scan.nextInt();
+        // int[] arr2 = new int[m];
+        // for(int i=0;i<m;i++)
+        // {
+        //     arr2[i]= scan.nextInt();
+        //     System.out.print(arr2[i]+" ");
+        // }
+        // System.out.print("\n");
+        // for(int i=0;i<n;i++)
+        // {
+        //     for(int j=0;j<m;j++)
+        //     {
+        //         if(arr[i]==arr2[j])
+        //             System.out.print(arr[i]+" ");
+        //     }
+        // }
+        
+        
+// 2 pointer technique
+// 2nd efficient algo method by using sort function
+        // short function to sort array Arrays.sort(array name);
+        // Arrays.sort(arr);
+        // Arrays.sort(arr2);
+        
+        // System.out.print("\n");
+        
+        // int ptr1 =0;
+        // int ptr2 =0;
+        
+        // while(ptr1<n && ptr2<m)
+        // {
+        //     if(arr[ptr1]==arr2[ptr2])
+        //     {
+        //         System.out.print(arr[ptr1]+" ");
+        //         ptr1++;
+        //         ptr2++;
+        //     }
+            
+            // else if(arr[ptr1]<arr2[ptr2])
+            //     ptr1++;
+            
+            // else ptr2++;
+        // }
+         
+// WAP to merge two sorted arrays and store in a resultent array
+// 2 pointer techniques
+        // System.out.print("\n");
+        // int m= scan.nextInt();
+        // int[] arr2 = new int[m];
+        // for(int i=0;i<m;i++)
+        // {
+        //     arr2[i]= scan.nextInt();
+        //     System.out.print(arr2[i]+" ");
+        // }
+        
+        // System.out.print("\n");
+        
+        // int ptr1 =0;
+        // int ptr2 =0;
+        // int [] newArray = new int [n+m];
+        // int ptr3 =0;
+        
+        // while(ptr1<arr.length && ptr2<arr2.length)
+        // {
+        //     if(arr[ptr1]<=arr2[ptr2])
+        //     {
+        //         newArray[ptr3]=arr[ptr1];
+        //         ptr1++;
+        //         ptr3++;
+        //     }
+            
+            // else
+            // {
+            //     newArray[ptr3]= arr2[ptr2];
+            //     ptr2++;
+            //     ptr3++;
+            // }
+            
+        // }
+        
+        // while(ptr1<n)
+        // {
+        //     newArray[ptr3]=arr[ptr1];
+        //     ptr1++;
+        //     ptr3++;
+        // }
+        
+        // while(ptr2<m)
+        // {
+        //     newArray[ptr3]= arr2[ptr2];
+        //     ptr2++;
+        //     ptr3++;
+        // }
+        
+        
+        // for(int i=0;i<m+n;i++)
+        //     {
+        //             System.out.print(newArray[i]+" ");
+        //     }
+
+// K'th rotation of array
+    // to simplify the big number of rotations we can use this formula to reduce the no. of rotations
+        
+// @importent   // no. of rotations =  k % n     where // k = no. of roatation we have to find
+                                                       // n = size of that array
+        // Scanner scan = new Scanner(System.in);
+        //  int n= scan.nextInt();
+        // int[] arr = new int[n];
+        // for(int i=0;i<n;i++)
+        // {
+        //     arr[i]= scan.nextInt();
+        //     System.out.print(arr[i]+" ");
+        // }
+        // int rot = scan.nextInt();
+        // System.out.println("\nrotation we need to find: "+ rot+"th");
+        // int rotation =  rot % arr.length;
+        // System.out.println("Real rotation needed: "+rotation);
+        
+        // my solution
+// with 2 for loops
+        // for(int i=0;i<rotation;i++)
+        // {
+        //     for(int j=0;j<n-1;j++)
+        //     {
+        //         int temp = arr[j];
+        //         arr[j] = arr[j+1];
+        //         arr[j+1] = temp;
+        //     }
+        // }
+        // for(int i=0;i<n;i++)
+        //     {
+        //             System.out.print(arr[i]+" ");
+        //     }
+        
+// with 2 pointer technique;
+        // for(int i=0;i<rotation;i++)
+        // {
+        //     int ptr1=0;
+        //     int ptr2=1;
+        //     while(ptr2<arr.length)
+        //     {
+        //         int temp = arr[ptr1];
+        //         arr[ptr1] = arr[ptr2];
+        //         arr[ptr2] = temp;
+        //         ptr1++;
+        //         ptr2++;  
+        //     }
+        // }
+        // for(int i=0;i<n;i++)
+        //     {
+        //             System.out.print(arr[i]+" ");
+        //     }
+        
+//class solution
+        
+        // for(int i=0;i<rotation;i++)
+        // {
+        //     int temp = arr[0];     // first store first value of array
+        //     for(int j=0;j<n-1;j++)
+        //     {
+        //         arr[j] = arr[j+1]; // swap remainig elements
+        //     }
+        //     arr[n-1] = temp;          // put the first elements value in last
+        // }
+        // for(int i=0;i<n;i++)
+        //     {
+        //             System.out.print(arr[i]+" ");
+        //     }
+        
+// by reversal algorithm
+        // we'll use here matrix property T( A+B ) = T(B) + T(A) 
+        // well devide array in two parts
+        // one till given rotation and one the remaining one
+        // reverse the starting k elements   where: k= no of rotation to be pertformed
+        // reverse the remainig n-k elements
+        // reverse the entire array
+        // by reversing both individually and adding and the reversing whole well get the rotated array
+        
+// code 
+        // first make a function to reverse an array by two pointer technique
+        // so we need to pass array, stating index, ending index;
+        // int start =0;
+        // int end = n-1;  // to reverse entire array;
+        
+        // reverse(arr, start, end); //reverse function 
+        
+//         int rot = scan.nextInt();
+//         System.out.println("\nrotation we need to find: "+ rot+"th");
+//         int rotation =  rot % arr.length;
+//         System.out.println("Real rotation needed: "+rotation);
+//         int k = rotation;
+//         reverse(arr, 0, k-1);  //reverse the starting k elements;
+//         reverse(arr, k, n-1);  //reverse the remainig n-k elements;
+//         reverse(arr, 0, n-1);  // reverse the entire array;
+        
+//         for(int i=0;i<n;i++)
+//             {
+//                     System.out.print(arr[i]+" "); //print
+//             }
+        
+// two sum problem       
+//         Given an array of integers nums and an integer target, return indices of the two numbers   such that they add up to target.
+
+// You may assume that each input would have exactly one solution, and you may not use the same element  twice.
+
+// You can return the answer in any order.
+        
+// Brute force approch by nested loop
+        // class Solution {
+        // public int[] twoSum(int[] nums, int target) {
+        //     int[] ans = new int[2];
+        //     for(int i=0;i<nums.length-1;i++){
+        //     for(int j=i+1;j<nums.length;j++)
+        //         if(target == nums[i]+nums[j])
+        //         {
+        //             ans[0] = i;
+        //             ans[1] = j;
+        //             return ans;
+        //         }        
+        // }
+        // return null; 
+        
+        
+// by two pointer tequnique;
+        // first we sort the Array using built in sort function(Tim sort)
+        // then take two pointer start and end
+        // if the addition of start element and end element is greater then target do end--
+        // if the opposite is true then do start++
+        // if its equal to target print or return the values of start and end
+        
+        
+        // int[] ans = new int[2];
+        // int target = 70;
+        // Arrays.sort(arr);
+        // int start = 0; 
+        // int end= n-1;
+        // boolean flag = false;
+        // while(start < end)
+        // {
+        //   int temp = arr[start] + arr[end];
+        //     if(temp == target)
+        //     {
+        //         ans[0] = start;
+        //         ans[1] = end;
+        //         System.out.print("\n");
+        //         System.out.print(ans[0]+" "+ans[1]);
+        //         flag = true;
+        //         // break; // if we need to print only one solution
+        //         // if want to print all the solutions
+        //         start++;
+        //         end--;
+        //     }
+        //     else if(temp>target)
+        //         end--;
+        //     else  start++;
+        // }
+        // System.out.print("\n");
+        // if( flag == false)
+        // {
+        //     System.out.print("not found");
+        // }
+// leetcode problem 1679. Max Number of K-Sum Pairs 
+       
+        // System.out.print("Number of sum pairs found: "+maxOperations(arr,target));
+        
+// WAP to find the target that is sum of 3 elements in array print there indexes;
+        // brute force
+        // we can do it by using three loops normally
+        // int target = scan.nextInt();
+        // System.out.print("\n");
+        // for(int i=0;i<n;i++)
+        // {
+        //     for(int j=1;j<n;j++)
+        //     {
+        //         for(int k=2;k<n;k++)
+        //         {
+        //             if(arr[i]+arr[j]+arr[k]==target)
+        //             {
+        //                 System.out.print(i+" "+j+" "+k);
+        //                 return;
+        //             }
+        //         }
+        //     }
+        // }
+        
+        
+        
+        
+        // now to make optimized version
+        // if a problem using n loops to solve then you should try to reduce no of loops to n-1 first
+        // like in this problem by using first loop as it is and using two pointer technique we can             //reduce no of loops by n-1
+        
+        // Arrays.sort(arr);
+        // int target = scan.nextInt();
+        // for(int i=0;i<n;i++)
+        // {
+        //     int start =i+1;
+        //     int end =n-1;
+        //     while(start<end)
+        //     {
+        //         int sum = arr[i] + arr[start] + arr[end];
+        //         if(sum==target)
+        //         {
+        //             System.out.print("\n");
+        //             System.out.print(i+" "+start+" "+end+ " ");
+        //             return; // if only want to print one solution
+        //             // end--;
+        //         }
+        //         else if(sum<target) start++;
+        //         else end--;
+        //     }
+        // }
+        
+// WAP to find the squires of a sorted array elemets and they are also should be sorted
+    // by inbuilt sort function
+        // for(int i=0;i<n;i++)
+        // {
+        //     int temp = arr[i];
+        //     arr[i] = temp*temp;
+        // }
+        // Arrays.sort(arr);
+        // System.out.print("\n");
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i]+" ");
+        // }
+        
+// By two pointer technique
+        // if we look at this array the squires of these elements will make a vally so middle element           //will be the smallest so start pointers from smallest elements
+        // lets suppose there always a 0 present in array so 
+        
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(arr[i]==0)
+        //     {
+        //         start= i;
+        //         end=i+1;
+        //     }
+        // }
+        // while(start<end)
+        // {
+        //     if(arr[start]==arr[end])
+        //     {
+        //         System.out.print("\n");
+        //         System.out.print(i+" "+start+" "+end+ " ");
+        //         return; // if only want to print one solution
+        //         // end--;
+        //     }
+        //     else if(sum<target) start++;
+        //     else end--;
+        // }
+        
+// Is perfect squire
+        
+        // Scanner scan = new Scanner(System.in);
+        // int N = scan.nextInt();
+        // int n = (int)Math.sqrt(N);
+        // if(n*n==N)
+        // System.out.println("True");
+        // else System.out.println("False");
+        
+        
+        
+        
+    }
+}
