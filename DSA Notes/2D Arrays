@@ -1,0 +1,658 @@
+// "static void main" must be defined in a public class.
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+import java.io.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+                                           // 2D Arrays \\       
+// Declaration
+        
+        int row = scan.nextInt();
+        int col = scan.nextInt();
+        int[][] mat = new int[row][col];
+        
+// taking input(Stdin)
+        
+        for(int i=0;i<row;i++)
+        {
+            for(int j=0;j<col;j++)
+            {
+                mat[i][j] = scan.nextInt();
+            }
+        }
+        
+// to find no. of rows ans col's in a given matrix
+        // int row = mat.length;
+        // int col = mat[0].length;
+        
+        
+// output (Stdout)
+        
+        for(int i=0;i<row;i++)
+        {
+            for(int j=0;j<col;j++)
+            {
+                System.out.print(mat[i][j]+" ");
+            }
+            System.out.println("");
+        }
+        
+// sum of all elemnts of matrix or 2d array
+        // int sum =0;
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         sum = sum + mat[i][j];
+        //     }
+        // }
+        // System.out.println("Sum of all elements is: "+sum);
+        
+        
+// sum of all  rows elements
+        // System.out.println("Sum of row elements is: ");
+        // for(int i=0;i<row;i++)
+        // {
+        //     int temp =0;
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         temp = temp + mat[i][j];
+        //     }
+        //     System.out.println(temp);
+        // }
+        
+        
+// Sum of column elements
+        // System.out.println("Sum of column elements is: ");
+        // for(int j=0;j<col;j++)
+        // {
+        //     int temp=0;
+        //     for(int i=0;i<row;i++)
+        //     {
+        //         temp = temp + mat[i][j];
+        //     }
+        //     System.out.println(temp);
+        // }
+        
+// Reverse a matrix
+// Row by Row reversal
+        // System.out.println("Row riversal of matrix");
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=col-1;j>=0;j--)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+// by two pointer technique
+        // System.out.println("by two pointer method");
+        // for(int i=0;i<row;i++)
+        // {
+        //     int start =0;
+        //     int end = col-1;
+        //     while(start<end)
+        //     {
+        //         int temp = mat[i][start];
+        //         mat[i][start] = mat[i][end];
+        //         mat[i][end] = temp;
+        //         start++;
+        //         end--;    
+        //     }
+        // }
+//  //print the reversed matrix
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+// col by col reversal
+        // System.out.println("column riversal of matrix");
+        // for(int i=row-1;i>=0;i--)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+// by two pointer technique
+        // System.out.println("by two pointer method");
+        // for(int j=0;j<col;j++)
+        // {
+        //     int start =0;
+        //     int end = row-1;
+        //     while(start<end)
+        //     {
+        //         int temp = mat[start][j];
+        //         mat[start][j] = mat[end][j];
+        //         mat[end][j] = temp;
+        //         start++;
+        //         end--;    
+        //     }
+        // }
+//  //print the reversed matrix
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+// revrse entire matrix  (Roataing by 180 degree)
+        // System.out.println("rivers of a matrix");
+        // for(int i=row-1;i>=0;i--)
+        // {
+        //     for(int j=col-1;j>=0;j--)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+// by two pointer technique
+        // System.out.println("by two pointer method");
+        // for(int i=0;i<row;i++)
+        // {
+        //     int start =0;
+        //     int end = col-1;
+        //     while(start<end)
+        //     {
+        //         int temp = mat[i][start];
+        //         mat[i][start] = mat[i][end];
+        //         mat[i][end] = temp;
+        //         start++;
+        //         end--;    
+        //     }
+        // }
+        // for(int j=0;j<col;j++)
+        // {
+        //     int start =0;
+        //     int end = row-1;
+        //     while(start<end)
+        //     {
+        //         int temp = mat[start][j];
+        //         mat[start][j] = mat[end][j];
+        //         mat[end][j] = temp;
+        //         start++;
+        //         end--;    
+        //     }
+        // }  
+//  //print the reversed matrix
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+//Rotating by 90 degree(cloackwise)
+        // To rotate a matrix by 90 degree we can use 2 methods or a bute force method
+        // first take transpose of the matrix and then use row reversal
+        // second you first column reverse the matrix and then take transpose
+        
+        // and lastly you can always use brute force method given below
+        // for a 90 degree rotation rows will become col and vise versa
+        // so Brute force approach to print it
+        // System.out.println("\n90 degree rotated matrix");
+        // for(int j=0;j<col;j++)
+        // {
+        //     for(int i=row-1;i>=0;i--)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+// To make a 90 degree rotated matrix first we have to take transpose of matrix
+        //then reverse it by row and youll get 90 degree rotated matrix
+        // Transpose:   mat[i][j] = mat[j][i];
+        // to use this trick matrix as to be squire so well idk for sure
+        
+    // System.out.println("\nTranspose matrix");
+        //Transpose
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<i;j++)
+        //     {
+        //         int temp = mat[i][j];
+        //         mat[i][j] = mat[j][i];
+        //         mat[j][i] = temp;
+        //     }
+        // }
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+        // // Row reversal
+        // for(int i=0;i<row;i++)
+        // {
+        //     int start =0;
+        //     int end = col-1;
+        //     while(start<end)
+        //     {
+        //         int temp = mat[i][start];
+        //         mat[i][start] = mat[i][end];
+        //         mat[i][end] = temp;
+        //         start++;
+        //         end--;
+        //     }
+        // }
+        // //print
+        // System.out.println("90 Degree Clockwise rotated matrix");
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+// 90 Degree AntiClockwise
+        // first perform roe by roe treversal
+        // And then take transpose of matrix
+        // meaning we have to revrce the process for cloackwise rotation
+        
+        // Row reversal
+        // for(int i=0;i<row;i++)
+        // {
+        //     int start =0;
+        //     int end = col-1;
+        //     while(start<end)
+        //     {
+        //         int temp = mat[i][start];
+        //         mat[i][start] = mat[i][end];
+        //         mat[i][end] = temp;
+        //         start++;
+        //         end--;
+        //     }
+        // }
+        // //Transpose
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<i;j++)
+        //     {
+        //         int temp = mat[i][j];
+        //         mat[i][j] = mat[j][i];
+        //         mat[j][i] = temp;
+        //     }
+        // }
+        // //print
+        // System.out.println("90 Degree AntiClockwise rotation atrix");
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+// Search a element in a matrix
+        // int target =  scan.nextInt();
+        // boolean flag = false; 
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         if(mat[i][j]==target){
+        //             System.out.print(true);
+        //             flag = true;
+        //             return;
+        //         }
+        //     }
+        // }
+        // if(flag==false)
+        // System.out.print(false);
+        
+// WAP to cheak if all rows have equal sum
+        //sum
+        // int[] sum = new int[row];
+        // for(int i=0;i<row;i++)
+        // {
+        //     int temp =0;
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         temp = temp+ mat[i][j];
+        //     }
+        //     sum[i] = temp;
+        // }
+        // for(int i=0;i<row-1;i++)
+        // {
+        //     if(sum[i]!=sum[i+1])
+        //     {
+        //         System.out.print(false);
+        //         return;
+        //     }
+        // }
+        //     System.out.print(true);
+        
+// WAP to cheak if all columns have equal sum       
+        //column sum
+        // int[] sum = new int[row];
+        // for(int j=0;j<col;j++)
+        // {
+        //     int temp =0;
+        //     for(int i=0;i<row;i++)
+        //     {
+        //         temp = temp+ mat[i][j];
+        //     }
+        //     sum[j] = temp;
+        // }
+        // for(int i=0;i<row-1;i++)
+        // {
+        //     if(sum[i]!=sum[i+1])
+        //     {
+        //         System.out.print(false);
+        //         return;
+        //     }
+        // }
+        //     System.out.print(true);
+            
+// WAP to find an element in sorted matrix
+        // by two pointer method
+        // int target =  scan.nextInt();
+        // int start =0;
+        // int end = col-1;
+        // while(end>=0)
+        // {
+        //     if(mat[start][end] == target)
+        //     {
+        //         System.out.println("Target fount at ["+start +","+end+"]");
+        //         break;
+        //     }
+        //     else if (mat[start][end] > target)
+        //     {
+        //         end--;
+        //     }
+        //     else start++;
+        // }
+        
+// Wave Traversal
+        // by two pointer method
+        // Row by row wave Traversal (Zig-Zag Traversal)
+        // so
+        // to make a row wave we have to print alternate rows in reverse formate
+        // so first loop will remain same well have to print the column indexes in reverse order
+        // System.out.println("");
+        // for(int i=0;i<row;i++)
+        // {
+        //     int start=0;
+        //     int end = col-1;
+        //     while(start<end)
+        //     {
+        //         if(i%2!=0)
+        //         {
+        //             int temp = mat[i][start];
+        //             mat[i][start] =  mat[i][end];
+        //             mat[i][end] = temp;  
+        //         }
+        //         start++;
+        //         end--;
+        //     }
+        // }
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+// Brute Force
+        // System.out.println("");
+        // for(int i=0;i<row;i++)
+        // {
+        //     if(i%2==0)
+        //     {
+        //         for(int j=0;j<col;j++)
+        //             System.out.print(mat[i][j]+" ");
+        //     }
+        //     else
+        //     {
+        //         for(int j=col-1;j>=0;j--)
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+        
+// col by col wave traversal
+// Two pointer method
+        // System.out.println("");
+        // for(int j=0;j<col;j++)
+        // {
+        //     int start=0;
+        //     int end = row-1;
+        //     while(start<end)
+        //     {
+        //         if(j%2!=0)
+        //         {
+        //             int temp = mat[start][j];
+        //             mat[start][j] =  mat[end][j];
+        //             mat[end][j] = temp;  
+        //         }
+        //         start++;
+        //         end--;
+        //     }
+        // }
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+// WAP to cheak weather a matrix is symmetric or not  
+        // in symmetric matrix upper triangle and lower triangle are same
+        // meaning matrix should be a squire matrix;
+    // brute force approach
+    // if mat[i][j] == mat[j][i] then we can say matrix is symmetric
+        // if(col != row)
+        // {
+        //     System.out.println(false);
+        //     return;
+        // }
+        // for(int i=0;i<=row/2;i++)
+        // {
+        //     for(int j=0;j<=col/2;j++)
+        //     {
+                // if(mat[i][j]!=mat[j][i]) // non diagonal elements should be equal
+                // {
+                //     System.out.println(false);
+                //     return;
+                // }
+        //     }
+        // }
+        // System.out.println(true);
+        
+// WAP to find if a matrix is identity matrix
+        // in identity matix all the elements are '0' exept the left diagonal(main diagonal)
+        // and  matrix should be a squire matrix means i == j;
+        // and mat[i][j] == mat[j][i] == 0;
+        // and mat[i][j] ==1  for (i==j);
+
+// code
+        // if(col != row)
+        // {
+        //     System.out.println(false);
+        //     return;
+        // }
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<col;j++)
+        //     {
+        //         if(i==j && mat[i][j]!=1) //diagonal elements should  be 1
+        //         {
+        //             System.out.println(false);
+        //             return;
+        //         }
+        //         else if(i!=j && mat[i][j] != 0) // non diagonal elements should be zero '0';
+        //         {
+        //             System.out.println(false);
+        //             return;
+        //         }
+        //     }
+        // }
+        // System.out.println(true); //matrix is a identity matrix
+        
+// WAP to find if diagonal sum are equls or not;
+        
+        // int ptr1= 0;
+        // int ptr2= 0;
+        // int sum1 =0;
+        // while(ptr2<col && ptr1<row)
+        // {
+        //         sum1=sum1+mat[ptr1][ptr2]; // sum of first diagonal
+        //         ptr1++;
+        //         ptr2++;    
+        // }
+        
+        // int ptr3 =0;
+        // int ptr4= col-1;
+        // int sum2 =0;
+        // while(ptr3<row && ptr4>=0)
+        // {
+        //         sum2=sum2+mat[ptr3][ptr4]; // sum of second diagonal
+        //         ptr3++;
+        //         ptr4--;    
+        // }
+        // if(sum1==sum2) // comparision
+        //     System.out.println(true);
+        // else System.out.println(false);
+        
+// diagonal traversal (printing a matrix diagonal by diagonal)
+        // we have to start from 0,0 and end at row,col
+        // so lets start
+        
+        // we have to create a new matrix for this cz no of rows is changed to (row*col-1)
+        // we have observed that sum of the row and col is denoting rows in new matrix so
+        
+        
+        // int[][] mat1 = new int[row+col-1][col];
+        // for(int sum =0; sum < (row+col-1); sum++)
+        // {
+        //     int i=sum;  // when diagonal starts from column 0;
+        //     int j=0;
+        //     if(sum >=row) // if the diagonal starts from bottom row;
+        //     {
+        //         i = row-1;
+        //         j = sum-i;
+        //     }
+        //     while(i >=0 && j<= col-1)
+        //     {
+        //         System.out.print(mat[i][j]+" ");
+        //         i--;
+        //         j++;
+        //     }
+        //     System.out.println("");
+        // }
+        
+// Add two matrixes
+        // first matrix alredy taken;
+        // int[][] sum = new int[row][col];
+        // int row2 = scan.nextInt();
+        // int col2 = scan.nextInt();
+        // int[][] mat2 = new int[row2][col2];  // second matrix
+        // for(int i=0;i<row2;i++)
+        // {
+        //     for(int j=0;j<col2;j++)
+        //     {
+        //         mat2[i][j] = scan.nextInt();
+        //     }
+        // }
+        
+        // if(row !=row2 || col != col2)
+        //     System.out.println(-1);
+        
+        // else
+        // {
+// Add
+            // for(int i=0;i<row;i++)
+            // {
+            //     for(int j=0;j<col;j++)
+            //     {
+            //         sum[i][j] = mat[i][j] + mat2[i][j];
+            //     }
+            // }
+// Print
+            // for(int i=0;i<row;i++)
+            // {
+            //     for(int j=0;j<col;j++)
+            //     {
+            //         System.out.print(sum[i][j]+" ");
+            //     }
+            //     System.out.println("");
+            // }
+        // }
+        
+// Multiplication of two matrixes;
+        // for two matrixes to be multiplicable col should be equal to rows (col1 == row2);
+        // for now we are multiplying the same matrix and printing it
+        // in resultant matrix the first element will be the resultant sum of th multiplication  entire first row and first colum
+        
+        //Code 
+        // first take second matrix
+        // int r = scan.nextInt();
+        // int c = scan.nextInt();
+        // int[][] matx = new int[r][c];
+        // System.out.println("\nMatrix 2");
+        // for(int i=0;i<r;i++)
+        // {
+        //     for(int j=0;j<c;j++)
+        //     {
+        //         matx[i][j] = scan.nextInt();
+        //         System.out.print(matx[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        // now for mutiplication deimension should be [row of 1st matrix][col of 2nd matrix] 
+        // int[][] multi = new int[row][c];
+        // for(int i=0;i<row;i++)
+        //     {
+        //         for(int j=0;j<c;j++)
+        //         {
+        //             for(int k=0;k<col;k++)
+        //                 multi[i][j] = multi[i][j]+ mat[i][k]*matx[k][j];
+        //         }
+        //     }
+        // resultant matrix;
+        // System.out.println("");
+        // System.out.println("Resultant of two matrix multiplication");
+        // for(int i=0;i<row;i++)
+        // {
+        //     for(int j=0;j<c;j++)
+        //     {
+        //         System.out.print(multi[i][j]+" ");
+        //     }
+        //     System.out.println("");
+        // }
+        
+        
+        
+        
+        
+
+        
+    }
+}
