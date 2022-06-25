@@ -1,0 +1,105 @@
+// "static void main" must be defined in a public class.
+
+// fuction/methods
+// main advantages of functions:-
+// 1. modulerizing(packing code in diffrent sections)
+// 2. Easy debugging code(remove error before compiling)
+
+// how to write a function 
+//public|static|return type(datatype)|fuctionname|(passed values(parameter))|{code} 
+// return types are nothing but datatype of the vlue we want to return to main function.
+// if nothing is returnig then VOID will be written
+// ex.  public static void fun1(int a){}.
+
+// typs of functions
+// 1. no parameter no return type.
+// 2. with parameter without return type.
+// 3. no parameter with return type.
+// 4. with parameter with return type.
+
+public class Main {
+    public static void printMe(){
+        System.out.println("Hii I'm CRYO");
+    }
+    public static void squire(int a, int b){
+        if(a==b)
+        {
+            System.out.println("its a Squire");
+        }
+        else 
+        {
+            System.out.println("not a squire");
+        }
+    }
+    
+    public static void isPrime(int n){
+        for (int i=2;i<n;i++)
+        {
+            if(n%i==0){
+                System.out.println("not prime");
+                return;//if the condition is fulfield the fuction is returned in main fn
+            }
+        }
+        System.out.println("prime");
+    }
+    
+    public static int add(){
+        int a = 14;
+        int b = 55;
+        return(a+b);   
+    }
+    
+     public static int div(){
+         int a = 420;
+         int b = 351;
+         return(a-b);   
+    }
+    
+    public static double getRandom(){
+        return 100*Math.random();
+    }
+    
+    public static int addition(int a, int b, int c){
+        return(a+b+c);
+    }
+    
+    public static void main(String[] args) {
+        
+// 1. no parameter no return type.
+        printMe();
+        
+// 2. with parameter without return type.
+        System.out.println("Enter the width and height of a ractangle");
+        Scanner scan = new Scanner(System.in);
+        int width = scan.nextInt();
+        int height = scan.nextInt();
+//  cheak if squire
+        squire(width, height);//fuction call
+//  cheak if prime
+        int prm = scan.nextInt();
+        isPrime(prm);//fuction call
+// 3. no parameter with return type.
+        //addition
+        int ad = add();
+        //division
+        int di = div();
+        System.out.println("addition is " +ad+ " and dividion is "+ di);
+// TO get a random number
+        double ran = getRandom();
+        System.out.println(ran);
+        double fun = 12*Math.random();
+        System.out.println(fun);
+        
+
+// 4. with parameter with return type.
+        // To addition
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+        int add = addition(a, b, c);
+        // System.out.println(addition(a, b, c));
+        System.out.println(add);
+
+        
+    }
+}
