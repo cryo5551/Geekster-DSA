@@ -1,0 +1,430 @@
+
+                               // // // Array Shorting \\ \\ \\
+// to sort a array we can use Arrays.sort(array nmae);@importent
+
+
+// There are many Ways to short an Array
+// 1. Bubble Short:
+// Compare adjacent elements and in each itration largest element will be at thier correct position.
+
+// 2. Salection Short:
+// Search for the 'kth' smallest element and place in 'kth' place;
+// for ex. search for '1st' smallest and  place it in '1st' place.
+
+// 3. Insertion Short:
+// Take one element ata time and place it in shorted position;
+
+// 4. Quick Short:
+// Asking every element its correct shorted position and place in shorted position.
+
+// 5. Merge Short:
+// Devide and Rule stratagy
+// make two subclass of array 
+// short by picking smaller from the two arrays
+// first divide the array in two parts and short both the parts 
+// now compare both shorted arrays and  which element is lesser put it in shorted position;
+
+
+                                // // // BUBBLE SHORT \\ \\ \\
+
+// Compare adjacent elements and in each itration largest element will be at thier correct position.
+// in this method stating from 0th index we compare the ith index with (i+1)th index
+// and  ith index element is smaller then (i+1)th element then swap them and repeat it (n-1) times
+// for ex 
+//        arr[4]    3   6   1   2
+//                  3   1   2   6     
+//                  1   2   3   6
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] arr = new int[n];
+        
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = scan.nextInt();
+            System.out.print(arr[i] +" ");
+        }
+//         System.out.print("\n");
+        
+//         int smallest = Integer.MAX_VALUE;
+        
+//         for(int j=0;j<n;j++)
+//         {
+//             if(arr[j]<smallest)
+//             {
+//                 smallest = arr[j];
+//             }
+//         }
+//         System.out.print(smallest);
+        
+        
+// Fabbonaci sequnce
+// 1st method mine
+        // int[] arr = new int[n+2];
+        // for(int i=0;i<n;i++)
+        // {
+        //     arr[0] =0;
+        //     arr[1] =1;
+        //     arr[i+2] = arr[i] + arr[i+1];
+        //     System.out.print(arr[i] +" ");
+        // }
+// 2nd method class(without array)
+        //best way and most efficient way;
+       // int a =0, b =1, c=a+b;
+       //  System.out.print(a +" "+ b +" ");
+       //  for(int i=3;i<=n;i++)
+       //  {
+       //      System.out.print(c+" ");
+       //      a=b; b=c; c=a+b;  
+       //  }
+        
+// WAP to return nth fabbonaci number
+        // arr[0] =0;
+        // arr[1] =1;
+        // System.out.print(arr[0]+" "+arr[1]+" ");
+        // for(int i=2;i<=n;i++)
+        // {
+            
+        //     arr[i] = arr[i-1]+arr[i-2];
+        //     System.out.print(arr[i]+" ");      
+        // }
+        
+        // System.out.print(arr[n]);
+        
+        
+// WAP to calculate factorial of input n
+        // int fact = 1;
+        // for(int i=n;i>0;i--)
+        // {
+        //     fact = fact*i;
+        // }
+        // System.out.print(fact);
+        
+//         WAP to print a factorial series and save them in array;
+        
+        // int[] arr = new int[n];
+        //  int fact = 1;
+        // for(int j=1;j<=n;j++)
+        // {
+        //     fact = fact*j;
+        //     arr[j-1] = fact; 
+        //     System.out.print(arr[j-1] +" " );
+        // }
+        
+// Bubble short
+// the outer loop will run for (n-1) itrations.
+// the inner loop will start from 0 and will run for  (n-1)itrations in first itration;
+// and for (n-2), (n-3)..........  itrations respectively;
+// we can say the second loop will run for (n-i) itrations where i= 1,2,3......n-1;
+// 1st mine
+        // int[] arr = new int[n];
+         // for(int i=0;i<n;i++)
+        // {
+        //     arr[i] = scan.nextInt();
+        //     System.out.print(arr[i] +" ");
+        // }
+        // System.out.print("\n");
+        // int swap = 0;
+        // for(int i=1;i<n;i++)
+        // {
+        //     for(int j=0;j<n-i;j++)
+        //     {
+        //         if(arr[j+1]<arr[j])
+        //         {
+        //             swap = arr[j];
+        //             arr[j] = arr[j+1];
+        //             arr[j+1] = swap;
+        //         }   
+        //     }
+        // }
+        
+        // for(int i=0;i<n;i++)
+        // {
+            // System.out.print(arr[i] +" ");
+        // }
+        
+// 2nd class
+        // int [] arr = new int[n];
+        
+        // for(int i=0; i<n; i++)
+        // {
+        //     arr[i] = scan.nextInt();
+        //     System.out.print(arr[i] +" ");
+        // }
+        // int swap = 0;
+        // for(int i=0;i<n-1;i++)
+        // {
+        //     for(int j=0;j<n-(1+i);j++)
+        //     {
+        //         if(arr[j+1]<arr[j])
+        //         {
+        //             swap = arr[j];
+        //             arr[j] = arr[j+1];
+        //             arr[j+1] = swap;
+        //         }   
+        //     }
+        // }
+        // System.out.print("\n");
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i] +" ");
+        // }
+        
+// Selection short
+// look for ith smallest element in array and put it in ith place.
+// to do first we assume 1st element is smallest and compare it to whole array to find the smallest  //    and put it in first place by swapping smallest and first.
+// now in second itration we ignore the first element and compare 2nd element to remaing elements and find the 2nd smallest and put it in 2nd place by swapping  with 2nd index element
+//  well run outer loop for <|n-1| time also in this method.
+//  the inner loop will run from (i+1) if we are looking for ith element and run until < n itrations.
+        
+        // int [] arr = new int[n];
+        
+        // for(int i=0; i<n; i++)
+        // {
+            // arr[i] = scan.nextInt();
+            // System.out.print(arr[i] +" ");
+        // }
+        // int small=0;
+        // int temp;
+        // for(int i=0;i<n-1;i++)
+        // {
+            // small = i;
+            // for(int j=i+1;j<n;j++)
+            // {
+            //     if(arr[j]<arr[small])
+            //     {
+            //         small =j;
+            //     }
+            // }
+            // temp = arr[small];
+            // arr[small] = arr[i];
+            // arr[i] = temp;
+                
+        // }
+        // System.out.print("\n");
+        // for(int i=0;i<n;i++)
+        // {
+            // System.out.print(arr[i] +" ");
+        // }
+        
+// Insertion Sort:
+        
+// in insertion sort we basically devide the array in two parts one in soreted and another in sorted;
+// first take first element in sorted array and remaining array as unsoretd array;
+// now ask 2nd element its correct position in soretd array and place it in that place
+// the meaning of last line in that we will compare the coming element with the array elements and then swap if neccesory top adjust forr its position.
+// again the outer loop will run for <n-1 times
+        
+        // int [] arr = new int[n];
+        
+        // for(int i=0; i<n; i++)
+        // {
+        //     arr[i] = scan.nextInt();
+        //     System.out.print(arr[i] +" ");
+        // }
+        // for(int i=1; i<n; i++)
+        // {
+        //     for(int j=i-1; j>=0;j--)
+        //     {
+// we cant use arr[i] to compare here becouse its value won't swap in this loop
+// so we can use if(arr[j+1]<arr[j]) instead of if(arr[i]<arr[j])
+                
+                // if(arr[j+1]<arr[j])
+                // {
+                //     int temp = arr[j+1];
+                //     arr[j+1] = arr[j];
+                //     arr[j] = temp;
+                // }
+                //  else break;
+                
+                
+        //     }
+        // }
+        //  System.out.print("\n");
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i] +" ");
+        // }
+        
+// binary array
+//         segrigate the 0s and 1s in an array
+        // System.out.print("\n");
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(arr[i]==0)
+        //     {
+        //         System.out.print(arr[i]+" ");
+        //     }
+        // }
+        
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(arr[i]==1)
+        //     {
+        //         System.out.print(arr[i]+" ");
+        //     }
+        // }
+ 
+// 2nd method
+       // int count = 0;
+       // for(int i=0;i<n;i++)
+       // {
+       //     if(arr[i] ==0)
+       //     count++;
+       // }
+       
+       // for(int i=0;i<n;i++)
+       // {
+       //     if(i<count)
+       //     {
+       //         arr[i]=0;
+       //     }
+       //     else
+       //     arr[i]=1;
+       // }
+        
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i]+" ");
+        // }
+        
+// 3rd method and for use in interview or tests
+//  two pointer method
+        // pointers moving in opposite direction
+    // 1st    
+       // int start =0;
+       // int end = n-1;
+        
+        // while(start<end)
+        // {
+        //     while(start<end && arr[start]==0)
+        //         start++;
+            
+            // while(start<end && arr[end]==1)
+            //     end--;
+            
+            // if(start<end)
+            // {
+            //     int temp = arr[start];
+            //     arr[start] = arr[end];
+            //     arr[end] = temp;
+            //     start++;
+            //     end--;
+        //     }
+        // }
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i]+" ");
+        // }       
+        
+// 2nd       
+        // int start =0;
+        // int end = n-1;
+        
+        // while(start<end)
+        // {
+        //     if(arr[start]==0)
+        //         start++;
+            
+            // else if(arr[end]==1)
+            //     end--;
+            
+        //     else
+        //     {
+        //         int temp = arr[start];
+        //         arr[start] = arr[end];
+        //         arr[end] = temp;
+        // we can use start++ and end-- or u=ignor them
+        //         start++;
+        //         end--;
+        //     }
+        // }
+        
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i]+" ");
+        // }       
+        
+// sorting colors or 0,1,2
+        // 0's to the left  1's in the middle 2's to the right
+        
+        
+// two treversal approch
+        // first count the no of 0's, 1's, 2's and print them respectively
+        // int count0 =0;
+        // int count1 =0;
+        // for(int i=0;i<n;i++)
+        // {
+            // if(arr[i]==0)
+            //     count0++;
+            // else if(arr[i]==1)
+            //     count1++;
+        // }
+        
+        // for(int i=0;i<n;i++)
+        // {
+            // if(i<count0)
+            //     arr[i] = 0;
+            
+            // else if(i<(count1+count0) && i>=count0)
+            //     arr[i] = 1;
+            
+            // else
+            //     arr[i] = 2;
+        // }
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i]+" ");
+        // }
+        
+// two pointer approch.
+        // first we'll make 0's at one side and non zeros at other side;
+        // now apply same on non zeros to seperate 1's and 2's 
+        
+        // int start = 0;
+        // int end = n-1;
+        // int count0 =0;
+        // while(start<=end)
+        // {
+            // if(arr[start]==0)
+            // {
+            //     start++;
+            //     count0++;
+            // }
+                
+            // else if(arr[end]!=0)
+            //     end--;
+            
+            // else 
+            // {
+            //     int temp = arr[start];
+            //     arr[start] = arr[end];
+            //     arr[end] = temp;
+            // }
+        // }
+        
+        // start = count0;
+        // end = n-1;
+        // while(start<=end)
+        // {
+            // if(arr[start]==1)
+            //     start++;
+            // else if(arr[end]==2)
+            //     end--;
+            
+        //     else 
+        //     {
+        //         int temp = arr[start];
+        //         arr[start] = arr[end];
+        //         arr[end] = temp;   
+        //     }
+        // }
+        // for(int i=0;i<n;i++)
+        // {
+        //     System.out.print(arr[i]+" ");
+        // }
+        
+    }
+}
