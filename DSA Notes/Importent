@@ -1,0 +1,64 @@
+// "static void main" must be defined in a public class.
+
+// to sort a array use Arrays.sort(arr);
+//  1
+// if someone says write code outside of the main function then:-
+// you have to write it inside the main domain like this 
+//   static|datatype|variable name|=|value|(if not scanning)
+//  before declaration of any var you have to type static then datatype then variable 
+//  ex.  static int n;
+//  you must declare all the variables first that will be used in program next
+// to use scanner in here you have to write it inside  static {}
+//  and remainig code will also be written in static {}
+// for ex.
+// public class Main {
+//     static int a;
+//     static int b;
+//     static boolean lan = true;
+//     static{
+//         Scanner scan = new Scanner(System.in);
+//         a = scan.nextInt();
+//         b = scan.nextInt();
+//         if (a != Math.sqrt(b))
+//             lan = false;
+        
+//     }
+//     public static void main(String[] args) {
+//         if(lan)
+//             System.out.println("Hello World!");
+//         else
+//             System.out.println("fuck u mf");
+            
+//     }
+// }
+
+
+// 2
+// WAP to change the int into string 
+// if its done print "good job" else print "you know nothing jhon snow"
+public class Main {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        
+        String s = String.valueOf(n); //Integer to string
+        
+        if(n == Integer.parseInt(s))//string to integer
+        {
+            System.out.println("good job");
+        }
+        
+        else 
+        {
+            System.out.println("you know nothing jhon snow");
+        }
+        
+    }
+}
+
+
+// 3
+// arrays are statically fixed once the size declared can't be changed again.
+// @important size of array uses static memory allocation
+// i'll remain same for rest of the lifetime.
+
