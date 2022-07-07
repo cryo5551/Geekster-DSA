@@ -1,0 +1,1040 @@
+import java.util.*;
+import java.io.*;
+public class Main {
+    public static boolean isVowel(char ch){
+        
+           if(ch =='A'|| ch =='E' || ch=='I' || ch=='O' || ch=='U'||
+              ch =='a'|| ch =='e' || ch=='i' || ch=='o' || ch=='u')
+               return true;
+            
+    return false;
+    }
+    
+    public static  boolean isPrime(int num)
+    {
+        if(num<=1)
+        {
+            return false;
+        }
+       for(int i=2;i<num/2;i++)
+       {
+           if((num%i)==0)
+               return  false;
+       }
+       return true;
+    }
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        // int n = scan.nextInt();
+        
+        //Syntax of a string
+        
+        // String name = "Bhawani Shankar";
+        // System.out.println(name);
+        
+        // '' are used for declare a char and " " are used for staring;
+        
+        // String concatination (addition)
+        
+        // String firstName = "Cryo";
+        // String lastName = "Bhawin";
+        // System.out.println(firstName+" "+lastName);
+
+        // String Name = firstName+lastName;
+        // System.out.println(Name);
+        
+        // Time complaxity of a string is equal to its charecter present in it;
+        // So for two diffrent strings having n1 and n2 chars time complaxity will be n1+n2;
+        
+        // Find the time complaxity in given example;
+        // String alpha = "";
+        // for(char i = 'A'; i<='Z';i++)
+        // {
+        //     alpha = alpha+i;       // time complaxity for this is n(n+1)/2(addition of n numbers);
+        //     System.out.println(alpha);       
+        // }
+        
+        // Input a String
+        String str = scan.nextLine(); //takes whole line
+        // String str2 = scan.next();    // takes first word
+        
+        // Output/Print
+        System.out.println(str);
+        // System.out.println(str.length());
+        // System.out.println(str2);
+        
+        // Looping over a string
+        //here .length() is fuction instead of being property as in array
+        
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     System.out.println(str.charAt(i));
+        //     // we have to use charAt() function instead of []
+        // }
+        
+// WAP to count vowels in a string
+        // int count = 0;
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int vow = str.charAt(i);
+        //    if(vow =='A'|| vow =='E' || vow=='I' || vow=='O' || vow=='U')
+        //        count++;
+        //     else if (vow =='a'|| vow =='e' || vow=='i' || vow=='o' || vow=='u')
+        //         count++;
+        // }
+        //     System.out.println(count);
+        
+// WAP to reverse a STring
+        // String revStr = "";
+        // for(int i=str.length()-1; i>=0; i--)
+        // {
+        //     revStr = revStr + str.charAt(i);
+        // }
+        // System.out.println(revStr);
+            
+        
+// Interning in java 
+    // when using string for turists visiting diffrent cities we have to store everyones prefrence;
+        // But there will be turists going to same destination;
+        // If 2000 people is going to delhi then it'll take 4*2000 byts space;
+        // We can optimize it by storing the city name once and pointing the user at that object;
+        // That way we can save memory(space optimization);
+        // this process is called interning;
+        
+// Immutability(which can not be changed) in strings in java
+        // This is a direct consequnce of interning.
+        // immutability does not mean we cannot update the the string we can do that for ex
+        
+        // String firstName = "Cryo";
+        // String lastName = "Bhawin";
+        // System.out.println(firstName+" "+lastName);
+        // firstName = "LOL";                          // updation
+        // System.out.println(firstName+" "+lastName);
+        
+        //Now take an example that there are 8 users 3 wanna go to dehli and 5 wanna go to mumbai
+        // u1, u5, u7 = "delhi"          // users going to delhi
+        // u2, u3, u4, u6, u8 = "mumbai" // users going to mumbai;
+        // now if u5 decided that he wanna go to mumbai.
+        // we have to do all is point the user at same object as user 2,3,4,6 and 8 pointing;
+        // now 2 wanna go to dehli and 6 wanna go to mumbai;
+    // Meaning we can change the refrence variable itself;
+        
+//@importent // But we can not change the object in the heap itself thats what it means by immutability
+    // So in a String    
+    // Once we created a refrence variable for multiple users we can change what it is pointing  at         // But can't change the object  itself
+        
+// if wanna change one charecter in string
+        // like bhawain to bahwan so basiacally i->a 4th char changed to a
+        
+        // String name = "Bhawin";
+        // name.charAt(4) = 'a';      // not possible in java
+        // System.out.println(name);
+        
+    // It's not possible in java because, in a way it's changing the object and we know we cant do that
+        
+// WAP count the no of spaces in a string;
+        
+        // int count=0;
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     if(str.charAt(i) == ' ')
+        //     count++;
+        // }
+        // System.out.println(count);
+        
+// WAP to print alternate element in a string;
+        
+        // for(int i=0;i<str.length();i =i+2)
+        // {
+        //     System.out.print(str.charAt(i));
+        // }
+        
+// WAP to cheak if a string is a ideal string
+        // Ideal String is a string who has first char as capital letter and rest small;
+        // if not the convert it to ideal string;
+        
+        
+        // boolean flag = false;
+        // for(char i='A';i<='Z';i++)
+        // {
+        //     if(str.charAt(0) == i)
+        //         flag = true;   
+        // }
+        // for(int j=1;j<str.length();j++)
+        // {
+        //     // char ch = str.charAt(j);
+        //     if(str.charAt(j) >='A' && str.charAt(j) <='Z')
+        //     {
+        //         flag = false;
+        //         break;
+        //     }
+        // }
+        // if(flag == true)
+        //     System.out.println("Ideal");
+        // else
+        //     System.out.println("Not Ideal");
+        
+// WAP to short an string
+        // you can not sort a string diract;
+        // you have to convert it into a char array then we can sort it;
+        
+        // char[] arr = new char[str.length()];
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     arr[i] = str.charAt(i);
+        //     System.out.print(arr[i]);
+        // }
+        // System.out.println();
+        // Arrays.sort(arr);
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     System.out.print(arr[i]);
+        // }
+        
+    // Insted of using this we can use a inbuilt fuction to help us write program fast;
+        // function name is toCharArray means change a string to char array
+        // char[] arr = str.toCharArray();
+        // Arrays.sort(arr);
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     System.out.print(arr[i]);
+        // }
+        // System.out.println();
+        
+        // After sorting we have to convert it back to string
+        // we'll use a builtin function for that too
+        
+        // str = new String(arr);  //sorted string
+        // System.out.print(str);
+        
+        // in sorted string the spaces go in front;
+        
+        // in sort by using built in function sorting a string
+        
+        // char[] arr = str.toCharArray();
+        // Arrays.sort(arr);
+        // str = new String(arr);
+        // System.out.println(str);
+        
+//WAP to sort an strng using Frequency Array
+        // we have to make an array for ASCII values its length will be of ASCII chart
+        // int[] arr = new int[128];
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     char ch=str.charAt(i);
+        //         arr[ch]++;
+        // }
+        // // print the frequncy array
+        // for(int j=0;j<128;j++)
+        // {
+        //     System.out.print(arr[j]);
+        // }
+        // String newStr ="";
+        // for(int j=0;j<128;j++)
+        // {
+        //     for(int i=0;i<arr[j];i++)
+        //     {
+        //         char ch = (char)j;
+        //         newStr = newStr+ch;
+        //     }
+        // }
+        // System.out.print(newStr);
+    
+// Pallindromic String;
+        // Strings thode are same when read from left to rigth ot rigth to lrft;
+        // Ex. "MADAM", "MOM", "RACECAR", "NAAN", "POP" etc. are pallindromic Strings;
+        
+// WAP to cheak weather  a string is pallindromic string or not
+    // BY two pointer method
+        // int start =0;
+        // int end =str.length()-1;
+        // while(start<=end)
+        // {
+        //     if(str.charAt(start) != str.charAt(end))
+        //     {
+        //         System.out.println(false);
+        //         return;
+        //     }
+        //     start++;
+        //     end--;
+        // }
+        // System.out.println(true);
+        
+// WAP to reverce a String;
+        // String rStr = "";
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     rStr = str.charAt(i)+rStr;
+        // }
+        // System.out.println(rStr);
+        
+// WAP to reverse words in a string;
+        // 557. Reverse Words in a String III //Leetcode
+        // Input: s = "God Ding"
+        // Output: "doG gniD"
+        
+        // int start =0;
+        // int end = 0;
+        // String rStr ="";
+        // while(start < str.length())
+        // {
+        //    while(end<str.length() && str.charAt(end) != ' ')
+        //    {
+        //        end++;
+        //    }
+        //     for(int i= end-1;i>=start;i--)
+        //    {
+        //         rStr = rStr+str.charAt(i);
+        //    }
+        //     if(end<str.length())
+        //         rStr = rStr + ' ';
+        //     end++;
+        //     start = end;
+        // }
+        // System.out.println(rStr);
+        
+// WAP to reverce a string by words
+        // 151. Reverse Words in a String //Leetcode
+        // Input: s = "the sky is blue"
+        // Output: "blue is sky the"
+        
+    //Trim fuction can ignor all the extra spaces present in start and end of a string
+        
+    // CODE
+        // str = str.trim(); 
+        // // Trim() changs the size of string so we use it before declaring pointers
+        // int start =str.length()-1;
+        // int end = str.length()-1;
+        // String newStr = "";
+        // // Itrate on each word until 0 index
+        // while(end>=0)
+        // {
+        //     // find the space from rigth to left
+        //     while(start>=0 && str.charAt(start) != ' ')
+        //     {
+        //         start--; 
+        //     }
+        //     //Add the words is a new string
+        //     for(int i=start+1 ;i<=end; i++)
+        //     {
+        //         newStr = newStr + str.charAt(i);
+        //     }
+        //    // TO add 1 space after a word end don't care if og has more or one space
+        //     if(start >=0 && start < end){
+        //         newStr = newStr + ' ';
+        //     }
+        //     start--;
+        //     end = start;
+        // }
+        // System.out.println(newStr);
+        
+// Anagram String
+        // we have to compare two strings if they abelow = elbowre anagram of each other
+        // in a anagram string both string have same lenth and same albhabets 
+        // the diffrence is they are jumbled 
+        // For Ex.  "below" = "elbow", "study" = "dusty" etc are examples of anagram
+// WAP to cheak weather strings are anagrm of each other.
+        // my approach by frequncy Array
+        // brute force approach
+        
+    // CODE
+        // first take second string in
+        // String str2 = scan.nextLine();
+        // System.out.println(str2);
+        // // Two frequncy Array
+        // int[] arr1 = new int[128];
+        // int[] arr2 = new int[128];
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     char ch=str.charAt(i);
+        //         arr1[ch]++;
+        // }
+        // for(int i=0;i<str2.length();i++)
+        // {
+        //     char ch=str2.charAt(i);
+        //         arr2[ch]++;
+        // }
+        // // BY comparing both frequncy Array if both are same then its a anagram
+        // for(int i=0;i<128;i++)
+        // {
+        //     if(arr1[i] != arr2[i])
+        //     {
+        //         System.out.println(false);
+        //         return;
+        //     }
+        // }
+        // System.out.println(true); 
+        
+// Another Approach
+        // we sort both strings and compare
+        // if same then its an Anagram if not then false
+        // take 2nd string input
+        
+    // CODE
+        // String str2 = scan.nextLine();
+        // System.out.println(str2);
+        //cheak if length of both strings are same if not then they can't be anagram
+        // if(str.length() != str2.length())
+        // {
+        //     System.out.println(false);
+        //     return;
+        // }
+        // // change the string to array by inbuilt function
+        // char[] arr1 = str.toCharArray();
+        // char[] arr2 = str2.toCharArray();
+        // Arrays.sort(arr1);
+        // Arrays.sort(arr2);
+        // // change back to string
+        // str = new String(arr1);
+        // str2 = new String(arr2);
+        // System.out.println(str);
+        // System.out.println(str2);
+        // // Now cheak if both strings are same
+        // if(str.equals(str2)) //inbuilt fuction to cheak if two stringa are equal;
+        // System.out.println(true);
+        // else System.out.println(false);
+
+// Panagram;
+        // A string that has every aphabet present in it
+        // Ex.   "abhicoredefgjklamonpqrstuvwxyz"
+        
+// WAP a program to cheak weather a string is panagram or not
+        
+    // CODE
+        // // if the strinbg has every alphabet then the min length should be 26
+        // // so if less then 26 then not an Panagram;
+        // if(str.length()< 26)
+        // {
+        //     System.out.println("Not an Anagram");
+        //     return;
+        // }
+        // // now creart a frequncy array for alphabet
+        // // And cheak if every element is having value atleast 1
+        // // if any one of th element is zero then no an Anagram;
+        // int[] freq = new int[26];
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     char ch = str.charAt(i);
+        //     freq[ch-'a']++;
+        // }
+        // for(int i=0;i<26;i++)
+        // {
+        //     if(freq[i]==0)
+        //     {
+        //         System.out.println("Not an Anagram");
+        //         return;
+        //     }   
+        // }
+        // System.out.println("Anagram");
+        
+// 1832. Check if the Sentence Is Pangram
+        // A pangram is a sentence where every letter of the English alphabet appears at least once.
+        // Given a string sentence containing only lowercase English letters, return true if sentence is a pangram, or false otherwise.
+        // Ex.
+        // Input: sentence = "thequickbrownfoxjumpsoverthelazydog"
+        // Output: true
+// Explanation: sentence contains at least one of every letter of the English alphabet.
+        // Input: sentence = "leetcode"
+        // Output: false
+        
+    //CODE
+        // // if the strinbg has every alphabet then the min length should be 26
+        // // so if less then 26 then not an Panagram;
+        // if(str.length()< 26)
+        // {
+        //     return false;
+        // }
+        // // now creart a frequncy array for alphabet
+        // // And cheak if every element is having value atleast 1
+        // // if any one of th element is zero then no an Anagram;
+        // int[] freq = new int[26];
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     char ch = str.charAt(i);
+        //     freq[ch-'a']++;
+        // }
+        // for(int i=0;i<26;i++)
+        // {
+        //     if(freq[i]==0)
+        //     {
+        //         return false;
+        //     }   
+        // }
+        // return true;
+        
+// MIN and MAX distance b/w vowels
+        // MAX is simple we have to find the left most vowl and rigth most vowl
+        // the distance b/w those to would be MAX distance;
+        
+        // for MIN we have to look for every vowel and the nearest vowel
+        // to that whichever one is at min. distance that will be the answer
+        
+// WAP to find MAX and MIN distance b/w vowels
+        
+// For MAX
+        
+    // CODE
+        // int start =0;
+        // int end = str.length()-1;
+        // while(start<str.length())
+        // {
+        //     char ch = str.charAt(start);
+        //     if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+        //        ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'  )
+        //     {
+        //         break;
+        //     }
+        //     else start++;
+        // }
+        // while(end>=0)
+        // {
+        //      char ch = str.charAt(end);
+        //     if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+        //        ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'  )
+        //     {
+        //         break;
+        //     }
+        //     else end--;
+        // }
+        // System.out.println(end-start);
+        
+// CLASS CODE OPTIMIZED VERSION
+        // int start =0;
+        // int end = 0;
+        // int i =0;
+        // while(start<str.length())
+        // {
+        //     char ch = str.charAt(start);
+        //     if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+        //        ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'  )
+        //     {
+        //         i=start;
+        //         if(end==0)
+        //         {
+        //             end=start;
+        //         }
+        //         start++;
+        //     }
+        //     else start++;
+        // }
+        // System.out.println(i-end);
+        
+        
+// For MIN
+        
+    // CODE
+        // int min = Integer.MAX_VALUE;
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     char ch = str.charAt(i);
+        //     if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+        //        ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+        //     {
+        //         for(int j =i+1;j<str.length();j++)
+        //         {
+        //             char ch2 = str.charAt(j);
+        //             if(ch2=='a'||ch2=='e'||ch2=='i'||ch2=='o'||ch2=='u'||
+        //                ch2=='A'||ch2=='E'||ch2=='I'||ch2=='O'||ch2=='U')
+        //             {
+        //                 if((j-i)<min)
+        //                 {
+        //                     min = j-i;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        // System.out.println(min);
+        
+// WAP to convert a string to intiger
+        //By inbuilt method it'll parse the string into a intiger value
+    
+    // CODE
+        // int num = Integer.parseInt(str);
+        // System.out.println(num);
+        
+        
+        // By parsing each char into intiger
+        // if we subtract '0' from a char it'll  become a intiger  digit
+        // to make it into number we'll use this formula num = (num*10)+nextdigit;
+    
+    //CODE
+        // int num =0;
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     char ch = str.charAt(i);
+        //     int digit = ch - '0';
+        //     num = (num*10) + digit;
+        // }
+        // System.out.println(num);
+        
+// WAP to cheak weather two strings have equal ASCII sum ot not
+        // first of all lets take second string input;
+        
+    // CODE
+        // String str2 = scan.nextLine();
+        // System.out.println(str2);
+        // // now to calculate ASCII sum of strings
+        // int sum1 =0;
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int ch = (int)str.charAt(i); // we can use typecast but its not necessory
+        //     sum1 = sum1 + ch;
+        // }
+        // System.out.println(sum1);
+        // int sum2=0;
+        // for(int i=0;i<str2.length();i++)
+        // {
+        //     sum2 = sum2 + (int)str2.charAt(i);
+        // }
+        // System.out.println(sum2);
+        // if(sum1==sum2)
+        //     System.out.println(true);
+        // else System.out.println(false);
+        
+// WAP to find index of first non repeating charecter in a string
+        
+    // CODE
+        // first we'll make a frequncy array for thee string
+        // int[] freq = new int[26];
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int j = str.charAt(i)-'a';
+        //     freq[j]++;
+        // }
+        // // now cheak which for which index of string frequncy array is 1
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int j = str.charAt(i)-'a';
+        //     if(freq[j]==1)
+        //     {
+        //         System.out.println(i);
+        //         return;
+        //     }
+        // }
+        // System.out.println(-1);
+        
+// 387. First Unique Character in a String
+        // Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+        
+        // Example 1:
+        // Input: s = "loveleetcode"
+        // Output: 2
+        
+        // Example 3:
+        // Input: s = "aabb"
+        // Output: -1
+        
+    // CODE
+        // // first we'll make a frequncy array for thee string
+        // int[] freq = new int[26];
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int j = str.charAt(i) - 'a';
+        //     freq[j]++;
+        // }
+        // // now cheak which for which index of string frequncy array is 1
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int j = str.charAt(i) - 'a';
+        //     if(freq[j]==1) return i;
+        // }
+        // return -1;
+        
+// WAP to remove duplicates from a string if
+        // string is unsorted
+        // string is sorted
+        
+// for UNSORTED String
+        
+    // CODE
+        // int[] freq = new int[128];
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int j = str.charAt(i);
+        //     freq[j]++;
+        // }
+        // String newStr = "";
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int j = str.charAt(i);
+        //     if(freq[j]!=0)
+        //     {
+        //         newStr = newStr+str.charAt(i);
+        //         freq[j]=0;
+        //     }
+        // }
+        // System.out.println(newStr);
+
+// 2nd Method
+        
+    // CODE
+        // its same as before but by one loop
+        
+        // int[] freq = new int[128];
+        // String newStr = "";
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int j = str.charAt(i);
+        //     if(freq[j]==0)
+        //     {
+        //         newStr = newStr+str.charAt(i);
+        //         freq[j]++;
+        //     }
+        // }
+        // System.out.println(newStr);
+        
+// Now if we asked to remove all the duplicate chars and make a string only of unique chars then
+        
+    // CODE
+        // int[] freq = new int[128];
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int j = str.charAt(i);
+        //     freq[j]++;
+        // }
+        // String output ="";
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     int j = str.charAt(i);
+        //     if(freq[j]==1)
+        //     {
+        //         output = output+str.charAt(i);  
+        //     }
+        // }
+        // System.out.println(output);
+        
+// For UNSORTED String
+        
+    //CODE
+        // first sort the string
+        // char[] arr = str.toCharArray();
+        // Arrays.sort(arr);
+        // str = new String(arr);
+        // System.out.println(str + " (Without trim)");
+        // str = str.trim();
+        // System.out.println(str + " (After trim)");
+        // //new string to store output string
+        // String newStr = "";
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     if( i==0 || str.charAt(i)!=str.charAt(i-1))
+        //     newStr = newStr+str.charAt(i);
+        // }
+        // System.out.println(newStr);
+        
+// Now if we asked to remove all the duplicate chars and make a string only of unique chars and string is sorted then
+        
+    //CODE
+        // String output ="";
+        // if(str.charAt(0) != str.charAt(1))
+        //     output = output+ str.charAt(0);
+        // if(str.charAt(str.length()-1)!=str.charAt(str.length()-2))
+        //     output = output+ str.charAt(0);
+        // for(int i=1;i<str.length()-1;i++)
+        // {
+        //     if(str.charAt(i)!=str.charAt(i-1) && str.charAt(i)!=str.charAt(i+1) )
+        //     output = output+ str.charAt(i);
+        // }
+        // System.out.println(output);
+        
+// SUBSTRING
+        // A substring is apart of string in contiguious feshion;
+        // Means a contiguouse part of a string;
+        // Ex.  String = "a good example"
+        // there can be multiple substrings of this
+        // Ex.   Substrings = "a", "good", "example", "a good", "good example" ETC.
+
+// WAP to print all substrings of a given string;
+         // A substring is a continuous sequence of characters within a string.
+    
+    // CODE
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     String subStr ="";
+        //     for(int j=i;j<str.length();j++)
+        //     {
+        //         subStr = subStr+ str.charAt(j);
+        //         System.out.println(subStr);
+        //     }
+        // }
+
+// Inbuilt Substring Method (We'll be using it not the brute force);
+        // we need one parameter to use inbuilt method and that is strting index
+        // we can use starting and ending index also
+
+    // SYNTEX: str.substring(strting index) || str.substring(sindex,endindex)
+        // Ex.
+        
+    // CODE
+        // System.out.println(str.substring(8));
+        // System.out.println(str.substring(0,7));
+        // // in this ending index is not included in the output
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     for(int j=i;j<str.length();j++)
+        //     {
+        //         System.out.println(str.substring(i,j+1));
+        //     }
+        // }
+        
+// WAP to count the no of strings that are ending at a perticular given
+        // first take input the char
+    
+    //CODE
+        // char ch = scan.next().charAt(0);
+        // System.out.println("Target:" + ch);
+        // int count =0;
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     if(str.charAt(i) == ch)
+        //     {
+        //         count = count+(i+1);
+        //     }
+        // }
+        // System.out.println(count);
+        
+    // And if we have to print all of them then
+        
+    //CODE
+        // char ch = scan.next().charAt(0);
+        // System.out.println("Target:" + ch);
+        // int count =0;
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     for(int j=i;j<str.length();j++)
+        //     {
+        //         if(str.charAt(j) == ch)
+        //         {
+        //             System.out.println(str.substring(i,j+1));
+        //             count++;
+        //         }
+        //     }
+        // }
+        // System.out.println("Total "+ count + " Substrings that ends with char 'a'");
+        
+// WAP to count the no. of substrings having no VOWELS;
+        // its not the rigth code its diffrent thing;
+        // In this approach we are making    a substring without vowels and counting the substrings oof that pretty simple huh!
+        
+    // CODE
+        // String noVowel = "";
+        // int count =0;
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     char ch = str.charAt(i);
+        //     if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+        //        ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+        //     {
+        //         count++;
+        //     }
+        //     else noVowel = noVowel + str.charAt(i);
+        // }
+        // System.out.println("No. of Vowels: "+count);
+        // System.out.println(noVowel);
+        // // And as for no of substrings without vowels
+        // int temp =0;
+        // for(int i=0;i<noVowel.length();i++)
+        // {
+        //     temp =temp+i+1;
+        // }
+        // System.out.println(temp);
+
+// The RIGHT Approach
+// In this Aprch we'll try to find the starting and ending indexes with no vowel in b/w
+        
+    // CODE
+        // int count =0;
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     for(int j=i;j<str.length();j++)
+        //     {
+        //         if(isVowel(str.charAt(j)))
+        //             break;
+        //         // System.out.println(str.substring(i,j+1));
+        //         count++;
+        //     }
+        // }
+        // System.out.println("Total no of Substrings without Vowels: "+count);
+
+        
+// WAP to print all the substrings that strting at 'a' and ending at 'a' and find the length of largest substring
+        
+    // CODE
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     for(int j=i;j<str.length();j++)
+        //     {
+        //         if(str.charAt(i) =='a' && str.charAt(j) =='a')
+        //         System.out.println(str.substring(i,j+1));
+        //     }
+        // }
+        
+    // we can further optimize this 
+        // for(int i=0;i<str.length();i++)
+        // {
+        //     if(str.charAt(i) !='a') continue;
+        //     for(int j=i;j<str.length();j++)
+        //     {
+        //         if(str.charAt(i) =='a' && str.charAt(j) =='a')
+        //         System.out.println(str.substring(i,j+1));
+        //     }
+        // }
+        
+// String Comprassion
+        // encript a massage in string formate
+        // Ex.
+        // Input: aaaabbbccc
+        // Output: a4b3c3
+        // Explanation: a repeated 4 times consecutively b 3 times, c also 3 times.
+        
+    // CODE
+        // int count = 1;
+        // String newStr = "";
+        // int i;
+        // for(i=0;i<str.length()-1;i++)
+        // {
+        //     if(str.charAt(i)==str.charAt(i+1))
+        //     {
+        //         count++;
+        //     }
+        //     else 
+        //     {
+        //         newStr = newStr+str.charAt(i);
+        //         if(count!=1)
+        //         {
+        //             newStr = newStr+count;
+        //         }
+        //         count = 1;
+        //     }
+        // }
+        // //We have to add the last char mannualy out of the loop
+        // newStr = newStr+str.charAt(i);
+        // if(count!=1)
+        // {
+        //     newStr = newStr+count;
+        // }
+        // System.out.println(newStr);
+        
+        
+// TWO POINTER technique
+    
+    // CODE
+        // String newStr = "";
+        // int start =0;
+        // int end =1;
+        // int count = 1;
+        // while(end<str.length())
+        // {
+        //     if(str.charAt(start)==str.charAt(end))
+        //     {
+        //         count++;
+        //         end++;
+        //     }
+        //     else
+        //     {
+        //         newStr = newStr+str.charAt(start);
+        //         if(count!=1)
+        //         {
+        //             newStr = newStr+count;
+        //         }
+        //         start = end;
+        //         count =1;
+        //     }
+        // }
+        // newStr = newStr+str.charAt(start);
+        // if(count!=1)
+        // {
+        //     newStr = newStr+count;
+        // }
+        // System.out.println(newStr);
+        
+// SUBSEQUNCE
+        // its a substring that can be contiguious or not but its always left to right
+        // There can be 2^n subsequnse in a string;
+        // Ex.
+        // Input : abc
+        // Output : a, b, c, ab, bc, ac, abc
+        
+// WAP to print all subsequnce of an string;
+        
+// 392. Is Subsequence
+        // Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+
+// A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+        
+        // Example 1:
+        // Input: s = "abc", t = "ahbgdc"
+        // Output: true
+        
+    // CODE
+        // int ptr1 =0;
+        // int ptr2 =0;
+        // if(s.length()==0)
+        //     return true;
+        // while(ptr2<t.length() && ptr1<s.length())
+        // {
+        //     if(s.charAt(ptr1) == t.charAt(ptr2))
+        //     {
+        //         ptr1++;
+        //         ptr2++;
+        //     } 
+        //     else ptr2++;
+        // }   
+        // if(ptr1==s.length()) return true;     
+        // return false;
+        
+// 205. Isomorphic Strings
+// Given two strings s and t, determine if they are isomorphic.
+// Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+        
+        // Example 1:
+        // Input: s = "egg", t = "add"
+        // Output: true
+            
+        // Example 2:
+        // Input: s = "foo", t = "bar"
+        // Output: false
+                
+        // Example 3:
+        // Input: s = "paper", t = "title"
+        // Output: true
+        
+    // CODE
+        // -
+        // -
+        // -
+        // -
+        // -   
+            
+// 28. Implement strStr()
+// Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+        
+        // Example 1:
+        // Input: haystack = "hello", needle = "ll"
+        // Output: 2
+
+        // Example 2:
+        // Input: haystack = "aaaaa", needle = "bba"
+        // Output: -1
+        
+    // CODE
+        // int ptr1 =0;
+        // int ptr2 = n.length();
+        // if(n.length()==0)
+        // {
+        //     return 0;
+        // }
+        // while(ptr2<=s.length())
+        // {
+        //     if(s.substring(ptr1,ptr2).equals(n))
+        //         return ptr1;
+        //     else{
+        //         ptr1++;
+        //         ptr2++;
+        //     }
+        // }
+        // return -1;
+    
+    }        
+}
